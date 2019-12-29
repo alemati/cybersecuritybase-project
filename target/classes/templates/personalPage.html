@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sign up form</title>
+    </head>
+    <body>
+
+        <h3>Hi, <span th:text="${acc.username}">999</span>! Your password is: <span th:text="${acc.password}">999</span></h3>
+        
+        <p>You can add a bank account</p>
+        
+        <form action="#" th:action="@{/addBank/{username}(username=${acc.username})}" method="POST">
+            <p><label for="bankname">Bank name</label>: <input type="text" name="bankname" id="bankname"/></p>
+            <p><label for="number">Bank number</label>: <input type="text" name="number" id="number"/></p>
+            <p><input type="submit" value="Add new bank account!" /></p>
+        </form>
+        
+        <p>Your bank accounts</p>
+        <table>
+            <tbody>
+                <tr th:each="bank : ${banks}">
+                    <td th:text="${bank.name}">bank name</td>
+                    <td th:text="${bank.number}">bank bumber</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><a href="/login" th:href="@{/login}">Logout!</a></p>
+
+        
+    </body>
+</html>

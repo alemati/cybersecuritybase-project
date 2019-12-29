@@ -1,0 +1,6 @@
+2019-12-28 00:16:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "AGENT" not found; SQL statement:
+INSERT INTO Agent (id, name) VALUES ('asdf', 'asdf') [42102-193]
+2019-12-28 00:17:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACCOUNT" not found; SQL statement:
+INSERT INTO Account (username, password) VALUES ('asdf', 'asdf') [42102-193]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sign up form</title>
+    </head>
+    <body>
+
+        <h3>Hi, admin</h3>
+        <p>Here is the list of all accounts</p>
+        <table>
+            <tr th:each="user : ${users}">
+                <td th:utext="${user.username}">un</td>
+                <td th:text="${user.password}">pass</td>
+                <td><form th:action="@{/accounts/{id}(id=${user.id})}" th:method="delete"><input type="submit" value="Delete"/></form></td>
+            </tr>
+        </table>
+
+        <p><a href="/login" th:href="@{/login}">Logout!</a></p>
+
+
+    </body>
+</html>
